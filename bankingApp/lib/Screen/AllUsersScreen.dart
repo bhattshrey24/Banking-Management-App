@@ -13,13 +13,7 @@ class AllUsersScreen extends StatefulWidget {
 }
 
 class _AllUsersScreenState extends State<AllUsersScreen> {
-  // final UserBloc _userBloc =
-  //     UserBloc(); // this does the basic setup that is setting up the listeners , adding userList to UserListStream , baically it invokes the constructor therefore every statement in constructor is executed
-  // @override
-  // void dispose() {
-  //   _userBloc.dispose();
-  //   super.dispose();
-  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +41,7 @@ class _AllUsersScreenState extends State<AllUsersScreen> {
                         ? ch
                         : ListView.builder(
                             itemBuilder: (ctx, index) {
-                              // return StudentList(studentDetails.list[index],key:ValueKey(studentDetails.list[index].studDetailId));
+                            
                               return ListTile(
                                 leading: Icon(Icons.people),
                                 onTap: () {
