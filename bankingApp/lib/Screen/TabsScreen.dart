@@ -30,8 +30,8 @@ class _TabsScreenState extends State<TabsScreen> {
         ),
         body: TabBarView(
           children: <Widget>[
-            // HomeScreen(), // order matters , 1st tab activates this screen
-            AllUsersScreen(), //2nd tab activates this screen
+         
+            AllUsersScreen(), 
             TransferTable(),
 
           ],
