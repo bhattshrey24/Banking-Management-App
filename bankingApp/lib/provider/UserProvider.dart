@@ -35,11 +35,11 @@ class UserProvider with ChangeNotifier {
   }
 
   Future<void> fetchAndSet() async {
-    // i guess this should return User
+   
     print('inside fetch and set');
     final dbList = await AppDB.getData('User_Details');
 
-    // final academicDetailList = await AppDB.getData('student_academic_details');
+   
     _list = dbList.map((student) {
       return User(
           student['id'], student['name'], student['email'], student['credit']);
@@ -50,16 +50,15 @@ class UserProvider with ChangeNotifier {
   Future<void> delete(int id) async {
     final db = await AppDB.database();
     db.delete('User_Details', where: 'id=?', whereArgs: [id]);
-    //_list.remove(user); do this if changes are not reflected at the same time
+    
     notifyListeners();
   }
 
   Future<void> fetchAndSetTransfer() async {
-    // i guess this should return User
-    // print('inside fetch and set');
+    
     final dbList = await AppDB.getData('Transfer_Table');
 
-    // final academicDetailList = await AppDB.getData('student_academic_details');
+   
     _transferList = dbList.map((transaction) {
       return Transfer(transaction['txnId'], transaction['transferFrom'],
           transaction['transferTo'], transaction['transferAmount']);
@@ -69,16 +68,7 @@ class UserProvider with ChangeNotifier {
 
   Future<void> userEdit({int fromId, int toId, int transAmount,int fromAmount,int toAmount}) async {
     final db = await AppDB.database();
-    // db.update('student_academic_details', data,
-    //           where: 'id = ?',
-    //           whereArgs: [student.subjects[i].subjectId],
-    //           conflictAlgorithm: sql.ConflictAlgorithm.replace)
-    
-      // await db.rawUpdate(
-      //     'UPDATE student_background_details SET no_of_days_present = ?, lastPresentDate = ? WHERE id = ?',
-      //     [noOfDaysPresent, lastStoredDate, studId])
-
-  //  db.update('User_Details',);
+  
   await db.rawUpdate('UPDATE User_Details SET credit = ? WHERE id = ?',[fromAmount,fromId]);
     await db.rawUpdate('UPDATE User_Details SET credit = ? WHERE id = ?',[toAmount,toId]).then((value) => fetchAndSet());
     notifyListeners();
