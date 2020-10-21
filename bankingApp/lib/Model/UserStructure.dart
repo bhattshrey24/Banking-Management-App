@@ -7,7 +7,7 @@ class User {
   num _credit;
   User(this._id, this._name, this._email, this._credit);
   set id(int id) {
-    // this will set the id of the object , its return type is void cause we are not returning anything
+   
     this._id = id;
   }
 
@@ -20,11 +20,11 @@ class User {
   }
 
   set credit(num credit) {
-    // this will set the id of the object , its return type is void cause we are not returning anything
+   
     this._credit = credit;
   }
 
-  int get id => this._id; // this will return id to user
+  int get id => this._id; 
   String get name => this._name;
 
   String get email => this._email;
