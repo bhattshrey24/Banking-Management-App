@@ -13,7 +13,7 @@ class UserScreen extends StatefulWidget {
 
 class _UserScreenState extends State<UserScreen> {
   Transfer txn = Transfer(
-      // maybe initializing id can create problem
+     
       0,
       '',
       '',
@@ -21,7 +21,7 @@ class _UserScreenState extends State<UserScreen> {
 
   int txnAmount = 0;
   List<User> userList = [];
-  //TextEditingController _controller;
+  
   var currentSelectedUser;
   List<String> listOfUsers = [];
   bool _isInit = true;
@@ -39,7 +39,7 @@ class _UserScreenState extends State<UserScreen> {
       if (userListdum.length == 0) {
       } else {
         currentSelectedUser = user.name;
-        // selectedSubjectID = widget.student.subjects[0].subjectId;
+     
         for (int i = 0; i < userListdum.length; i++) {
           listOfUsers.add(userListdum[i].name);
         }
@@ -58,8 +58,7 @@ class _UserScreenState extends State<UserScreen> {
     Provider.of<UserProvider>(context, listen: false).addTransaction(txn).then(
       (value) {
         print('add student complete inside its then function');
-        //Navigator.pop(context, _editedDetails.name);
-        //Navigator.pop(context);
+       
       },
     );
     int fromAmt = user.credit - txnAmount;
@@ -81,7 +80,7 @@ class _UserScreenState extends State<UserScreen> {
       appBar: AppBar(
         title: Text('${user.name}'),
       ),
-      body: SingleChildScrollView( // maybe it will fix out of pixel problem
+      body: SingleChildScrollView(
               child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -150,10 +149,7 @@ class _UserScreenState extends State<UserScreen> {
                                 setState(
                                   () {
                                     currentSelectedUser = valSelected;
-                                    //     if (valSelected == 'UT 1') {
-                                    //       _selectedUtBarChart = 'ut1';
-                                    //       _currentSelectedUt = valSelected;
-                                    //     }
+                                 
                                   },
                                 );
                               },
@@ -179,9 +175,7 @@ class _UserScreenState extends State<UserScreen> {
                     ),
                   ),
                 ),
-                // SizedBox(
-                //   height: 5,
-                // ),
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -192,9 +186,7 @@ class _UserScreenState extends State<UserScreen> {
                           color: Colors.black87,
                           elevation: 10,
                           onPressed: () {
-                            // setState(() { // maybe make it navigator to pop instead
-                            //   onSave();
-                            // });
+                          
                             onSave();
                           },
                           icon: Icon(Icons.money_off, color: Colors.white),
