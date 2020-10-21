@@ -8,7 +8,7 @@ class Transfer {
   Transfer(
       this._txnId, this._transferFrom, this._transferTo, this._transferAmount);
   set txnId(int txnId) {
-    // this will set the id of the object , its return type is void cause we are not returning anything
+  
     this._txnId = txnId;
   }
 
@@ -21,7 +21,7 @@ class Transfer {
   }
 
   set transferAmount(num transferAmount) {
-    // this will set the id of the object , its return type is void cause we are not returning anything
+    
     this._transferAmount = transferAmount;
   }
 
