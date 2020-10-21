@@ -28,7 +28,7 @@ class TransferTable extends StatelessWidget {
                             : ListView.builder(
                                 itemBuilder: (ctx, index) {
                                   print(userDetails.transferList.length);
-                                  // return StudentList(studentDetails.list[index],key:ValueKey(studentDetails.list[index].studDetailId));
+                                
                                   return Card(
                                     elevation: 8,
                                     child: Padding(
@@ -63,10 +63,3 @@ class TransferTable extends StatelessWidget {
   }
 }
 
-// ListTile(
-//                                     leading: Icon(Icons.money_off),
-//                                     title: Text(
-//                                         '${userDetails.transferList[index].transferFrom}'),
-//                                     subtitle: Text(
-//                                         '${userDetails.transferList[index].transferTo}'),
-//                                   )
